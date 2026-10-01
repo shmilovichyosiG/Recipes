@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ספר המתכונים</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="hero-card" id="recipeCard">
+      <div class="hero-content">
+        <div class="category-label" id="recipeCategory">קטגוריה</div>
+        <h1 id="recipeName" class="recipe-title">טוען מתכון…</h1>
+        <button id="chooseBtn" class="choose-button">
+          <span>בחר מתכון אחר</span>
+        </button>
+        <div class="nav-row">
+          <button id="prevBtn" class="nav-button" aria-label="מתכון קודם">&#8594;</button>
+          <span id="recipeCounter" class="nav-counter"></span>
+          <button id="nextBtn" class="nav-button" aria-label="מתכון הבא">&#8592;</button>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img id="recipeImage" alt="" />
+      </div>
+    </header>
+
+    <section class="content-card">
+      <h2 class="content-title">מצרכים</h2>
+      <div id="groceriesBox" class="items-list groceries-list"></div>
+    </section>
+
+    <section class="content-card">
+      <h2 class="content-title">הוראות הכנה</h2>
+      <div id="instructionsBox" class="items-list instructions-list"></div>
+    </section>
+
+  </div>
+
+  <!-- מודאל בחירת מתכון -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h2 class="modal-title">בחירת מתכון</h2>
+
+      <label class="field">
+        <span class="field-label">קטגוריה</span>
+        <select id="categorySelect"></select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">מתכון</span>
+        <select id="recipeSelect"></select>
+      </label>
+
+      <div class="modal-actions">
+        <button id="cancelBtn" class="ghost-button">ביטול</button>
+        <button id="selectBtn" class="choose-button" disabled>
+          <span>בחר</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="recipes-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
